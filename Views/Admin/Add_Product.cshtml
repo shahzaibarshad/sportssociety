@@ -1,0 +1,41 @@
+﻿@model EAD_Project.Models.product
+
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+
+<link href="~/Content/login.css" rel="stylesheet" />
+    <script src='<%= Url.Content("~/scripts/jquery-1.7.1.js") %>'></script>
+    <script src='<%= Url.Content("~/scripts/jquery.validate.js") %>'></script>
+    <script src='<%= Url.Content("~/scripts/jquery.validate.unobtrusive.js") %>'></script>
+</head>
+@using (Html.BeginForm("save_Product", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+     <legend >Add Product</legend>
+      <div class="editor-label">  
+   
+       <table cellspacing="8" cellpadding="4">
+                    
+                     <tr>
+                        
+                        <td><h4>Product Name:</h4></td>
+                        <td>@Html.TextBox("name","", new { type = "text",style="width:210px;height:25px", placeholder = "Enter Name" })</td>
+                        <td style="color:red; font-weight:bold;" >@Html.ValidationMessageFor(m => m.name)</td>
+                    </tr>
+                     <tr>
+                        
+                        <td><h4>Product Price:<h3></td>
+                        <td>@Html.TextBox("price","",new { type = "text",style="width:210px;height:25px", placeholder = "Enter Price" })</td>
+                        <td style="color:red; font-weight:bold;" >@Html.ValidationMessageFor(m => m.price)</td>
+                    </tr>
+                    <tr>
+                        
+                        <td><h4>Product Image:</h4></td>
+                       <td><input name="image" type="file" data-preview-file-type="image"/> </td> 
+                    </tr>
+           </table>
+        
+
+        <input type="submit" style="margin-left:150px" value="Send" />
+        
+    </div>
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="38bfff5f89c446bf94542003c3ea222f" Name="Diagram1">
+        <EntityTypeShape EntityType="Database1Model.ADD_POST" Width="1.5" PointX="3.375" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.FEEDBACK" Width="1.5" PointX="5.75" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.USER" Width="1.5" PointX="0.75" PointY="0.625" IsExpanded="true" />
+        <AssociationConnector Association="Database1Model.FK_ADD_POST_ToUSER" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Database1Model.product" Width="1.5" PointX="5.625" PointY="2.875" />
+        <EntityTypeShape EntityType="Database1Model.item" Width="1.5" PointX="0.75" PointY="2.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

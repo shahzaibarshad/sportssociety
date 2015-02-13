@@ -1,0 +1,16 @@
+﻿@model IEnumerable< EAD_Project.Models.ADD_POST>
+
+<table  cellpadding="15" border="1">
+
+                            @foreach(var u in Model)
+                            {
+                                
+                                <tr>
+                                <td width="100" height="75"><img  src="~/Images/@u.image1" tyle="width:150px;height:75px" /> </td>
+                                <td width="1000" height="75"><a href="">@u.title</a><br /> @u.email <br />@u.phone <br/> @u.city   </td>
+                                <td width="100" height="75">@u.price   </td>
+                                 </tr>
+                                
+                            }
+
+                        </table>

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>PUCIT Sports Society</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+      <!-- here i include styles sheet files-->
+       <link href="~/Content/blue/bootstrap.min.css" rel="stylesheet" />
+
+
+      <!-- here i include javascript files-->
+      <script src="~/Scripts/jquery.js"></script>
+      <script src="~/Scripts/bootstrap-transition.js"></script>
+      <script src="~/Scripts/bootstrap-alert.js"></script>
+      <script src="~/Scripts/bootstrap-modal.js"></script>
+      <script src="~/Scripts/bootstrap-dropdown.js"></script>
+      <script src="~/Scripts/bootstrap-scrollspy.js"></script>
+      <script src="~/Scripts/bootstrap-tab.js"></script>
+      <script src="~/Scripts/bootstrap-tooltip.js"></script>
+      <script src="~/Scripts/bootstrap-popover.js"></script>
+      <script src="~/Scripts/bootstrap-button.js"></script>
+      <script src="~/Scripts/bootstrap-collapse.js"></script>
+      <script src="~/Scripts/bootstrap-carousel.js"></script>
+      <script src="~/Scripts/bootstrap-typeahead.js"></script>
+      <script src="~/Scripts/application.js"></script>
+</head>	
+<body>
+<div class="container">
+
+    <!-- This section contain logo and Images-->
+<div class="row-fluid">
+    <div class="span9"><br/><img src="~/Images/PSS.jpg" width="100" height="100" /> <h3>PUCIT Sports Society</h3></div>
+	<div class="span3"><br/>
+	<div class="pull-right">
+	<a href="https://www.facebook.com/PUCITSS"  original-title="facebook"><img src="~/Images/facebook.png" alt=" facebook"></a>
+	<a href="#"  original-title="Delicious"><img src="~/Images/Delicious.png"  alt=" delicious"></a>
+	<a href="#"  original-title="myspace"><img src="~/Images/myspace.png" alt="myspace"></a><br/><br/>
+	</div>
+	</div>
+</div>
+    <!-- This Section is for navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse">
+          <ul class="nav">
+            
+              <li class="Active" >@Html.ActionLink("View Event","ViewEvent","Admin")</li>
+              <li>@Html.ActionLink("View FeedBack","ViewFeedBack","Admin")</li>
+             <li>@Html.ActionLink("View Items","ViewAllUser","Admin")</li>
+              
+          </ul>
+          
+          <ul class="nav pull-right">
+               @{
+                  var x=Session["id"] as string;
+                  if(x!=null)
+                  {
+                   <li><a href="/Home/Logout">Logout</a></li>
+                   }
+                  else
+                  {
+                     <li><a href="/Home/LogIn">Login</a></li>
+                  }
+              
+              }
+              
+            <li class="divider-vertical"></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div>
+    </div><!-- /navbar-inner -->
+  </div>
+
+    <!-- This Section is for Carousel-->
+<div class="row-fluid">
+    <div class="span8">
+
+        @RenderBody()
+
+        
+
+
+    </div>
+	
+        <!-- This Section is for side image -->
+	
+</div>
+
+
+
+    
+<footer class ="modal-footer"><center><br/><p>Copyright &copy; @DateTime.Now.Year  <a href="https://www.facebook.com/shahzaib.arshad.7"> Shahzaib Arshad</a></p> 
+    <p>Design: <a href="http://pucit.edu.pk/sports-society.html">Punjab University College of Information Technology</a></p> 
+    <p>The current date and time is: @System.DateTime.Now</p>
+                              </center></footer>  
+</div>
+
+<div id="theme_switcher"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<EAD_Project.Models.item>
+
+@{
+    ViewBag.Title = "ViewAllUser";
+}
+
+                    <h1 style=" margin-left: 250px">List of all Items</h1>
+                        <table style=" margin-left: 200px" cellspacing="15" cellpadding="15" border="1">
+                            <tr>
+                                <th>ID</th>
+                                <th>ITEM</th>
+                                <th>QUANTITY</th>
+                                <th>AVAILABLE</th>
+                                <th>ISSUED TO</th>
+                                <th>UPDATE</th>
+                                <th>REMOVE</th>
+                            </tr>
+
+                            @foreach(var u in Model)
+                            {
+                                <tr>
+                                <td>@u.Id   </td>
+                                <td>@u.name   </td>
+                                <td>@u.qty    </td>
+                                <td>@u.available    </td>
+                                <td>@u.issued_to    </td>
+                               
+                               <td>@Html.ActionLink("Update", "update_item",new { Id =u.Id })</td> 
+                               <td>@Html.ActionLink("Remove", "remove_item",new { Id =u.Id })</td>
+                                                      
+                             
+                            </tr>
+
+                                
+                            }
+                            <br />
+                            @Html.ActionLink("Add new Item", "add_item","Admin")
+                        </table>

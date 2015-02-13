@@ -1,0 +1,26 @@
+﻿@model EAD_Project.Models.USER
+
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+
+<link href="~/Content/login.css" rel="stylesheet" />
+    <script src='<%= Url.Content("~/scripts/jquery-1.7.1.js") %>'></script>
+    <script src='<%= Url.Content("~/scripts/jquery.validate.js") %>'></script>
+    <script src='<%= Url.Content("~/scripts/jquery.validate.unobtrusive.js") %>'></script>
+</head>
+@using (Html.BeginForm("loginVerify", "Home", FormMethod.Post))
+{
+    <legend >Sign In to your account</legend>
+    <div class="editor-label">
+ 
+       @Html.Label("Email:")
+    @Html.TextBox("email","", new { type = "email",style="width:180px;height:20px", placeholder = "example@mail.ru" })
+     @Html.ValidationMessageFor(m => m.email)
+       @Html.Label("Password:")     
+        @Html.Password("password","",new { type = "password",style="width:180px;height:20px", placeholder = "*********" })
+        @Html.ValidationMessageFor(m => m.password)
+        <br />
+        <input type="submit" value="Login" />
+        @Html.ActionLink("Sign Up","SignUp","Home")
+    </div>
+}

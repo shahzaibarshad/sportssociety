@@ -1,0 +1,29 @@
+﻿@model EAD_Project.Models.item
+
+@{
+    ViewBag.Title = "update_item";
+}
+                <div style="margin-left: 250px">
+                   <!-- <form action="/Admin/update_userSave/@Model.name" method="post"> 
+                       in htmlhelper it automatically send parameter                     -->
+                        @using (Html.BeginForm("update_itemSave", "Admin", FormMethod.Post))
+                        {
+                            @Html.LabelFor(m=>m.Id)    
+							@Html.TextBoxFor(model => model.Id)
+
+                            @Html.LabelFor(m=>m.name)    
+							@Html.TextBoxFor(model => model.name)
+                                                  
+                    		@Html.LabelFor(m=>m.qty)
+						    @Html.TextBoxFor(model => model.qty)
+                    	       @Html.LabelFor(m=>m.available)	
+						    @Html.TextBoxFor(model => model.available)
+
+                            @Html.LabelFor(m=>m.issued_to)	
+						    @Html.TextBoxFor(model => model.issued_to)
+                    	
+                                                 							
+                            <input type="submit" class="submit-form" value="Submit" />
+                        }             
+                     
+                    </div>

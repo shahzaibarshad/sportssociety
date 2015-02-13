@@ -1,0 +1,26 @@
+﻿@model EAD_Project.Models.item
+
+@{
+    ViewBag.Title = "add_item";
+}
+                <div style="margin-left: 250px">
+                                 
+                        @using (Html.BeginForm("add_itemAdded", "Admin", FormMethod.Post))
+                        {
+                            
+
+                            @Html.LabelFor(m=>m.name)    
+							@Html.TextBoxFor(model => model.name)
+                                                  
+                    		@Html.LabelFor(m=>m.qty)
+						    @Html.TextBoxFor(model => model.qty)
+                    	       @Html.LabelFor(m=>m.available)	
+						    @Html.TextBoxFor(model => model.available)
+                            @Html.LabelFor(m=>m.issued_to)	
+						    @Html.TextBoxFor(model => model.issued_to)
+                    	
+                                                 							
+                            <input type="submit" class="submit-form" value="Submit" />
+                        }             
+                     
+                    </div>

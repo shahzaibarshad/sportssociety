@@ -1,0 +1,34 @@
+﻿@model IEnumerable<EAD_Project.Models.ADD_POST>
+
+@{ var xy = Session["id"] as string;
+   if(xy==null){
+       
+           Layout = "~/Views/Shared/_Layout.cshtml";
+                       
+       }
+       else{
+       Layout = "~/Views/Shared/_Layout1.cshtml";
+       }
+   }
+    
+<h1 style=" margin-left: 250px">List of all Events</h1>
+
+                    
+                        <table  cellpadding="15" border="1">
+
+                            @foreach(var u in Model)
+                            {
+                                
+                                <tr>
+                                <td width="100" height="75"><img  src="~/Images/@u.image1" tyle="width:150px;height:75px" /> </td>
+                                <td width="1000" height="75">@u.title<br /> @u.email <br />@u.phone    </td>
+                                <td width="100" height="75">@u.price   </td>
+ 
+                                <td>@Html.ActionLink("Remove", "remove_Post",new { id = u.Id })</td>
+                                 </tr>
+                                
+                            }
+
+                        </table>
+
+                        
